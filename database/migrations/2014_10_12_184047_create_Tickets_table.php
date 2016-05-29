@@ -20,7 +20,7 @@ class CreateTicketsTable extends Migration {
 			$table->enum('estado', array('abierto', 'cerrado'));
 
 			$table->integer('user_id')->unsigned();
-			$table->foreign('user_id')->references('id')->on('users');
+			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
 
 			$table->timestamps();
 		});

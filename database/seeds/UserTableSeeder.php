@@ -1,22 +1,39 @@
 <?php
 
-use Illuminate\Database\Seeder;
+use Faker\Generator;
 use SistemaTickets\Entities\User;
-use Faker\Factory as Faker;
 
-class UserTableSeeder extends Seeder {
+class UserTableSeeder extends BaseSeeder {
+
+	public function getModel()
+	{
+		return new User();
+	}
+
+	public function getDummyData(Generator $faker, array $valoresPersonalizados = array())
+	{
+		return [
+
+				'name' => $faker->name,
+
+				'email' => $faker->email,
+
+				'password' => bcrypt('test')
+
+			];
+	}
 
 	public function run() 
 	{
 		$this->crearAdmin();
-		$this->crearUsuarios(50);
+		$this->crearMultiples(50);
 	}
 
 
 
 	private function crearAdmin()
 	{
-		User::create([
+		$this->crear([
 
 			'name' => 'Alejandro',
 
@@ -26,24 +43,5 @@ class UserTableSeeder extends Seeder {
 
 		]);
 	}
-
-	private function crearUsuarios($num)
-	{
-		$faker = Faker::create();
-
-		for ($i=1; $i < $num; $i++) 
-		{ 
-			User::create([
-
-				'name' => $faker->name,
-
-				'email' => $faker->email,
-
-				'password' => bcrypt('test')
-
-			]);
-		}
-	}
-
 
 }
