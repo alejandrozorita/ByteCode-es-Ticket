@@ -6,7 +6,6 @@ use Faker\Factory as Faker;
 
 class TicketVotoTableSeeder extends BaseSeeder
 {
-
     protected $total = 300;
     /**
      * @return Ticket

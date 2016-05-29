@@ -3,45 +3,44 @@
 use Faker\Generator;
 use SistemaTickets\Entities\User;
 
-class UserTableSeeder extends BaseSeeder {
+class UserTableSeeder extends BaseSeeder
+{
+    public function getModel()
+    {
+        return new User();
+    }
 
-	public function getModel()
-	{
-		return new User();
-	}
+    public function getDummyData(Generator $faker, array $valoresPersonalizados = array())
+    {
+        return [
 
-	public function getDummyData(Generator $faker, array $valoresPersonalizados = array())
-	{
-		return [
+                'name' => $faker->name,
 
-				'name' => $faker->name,
+                'email' => $faker->email,
 
-				'email' => $faker->email,
+                'password' => bcrypt('test')
 
-				'password' => bcrypt('test')
+            ];
+    }
 
-			];
-	}
-
-	public function run() 
-	{
-		$this->crearAdmin();
-		$this->crearMultiples(50);
-	}
+    public function run()
+    {
+        $this->crearAdmin();
+        $this->crearMultiples(50);
+    }
 
 
 
-	private function crearAdmin()
-	{
-		$this->crear([
+    private function crearAdmin()
+    {
+        $this->crear([
 
-			'name' => 'Alejandro',
+            'name' => 'Alejandro',
 
-			'email' => 'alejandro@bytecode.es',
+            'email' => 'alejandro@bytecode.es',
 
-			'password' => bcrypt('admin')
+            'password' => bcrypt('admin')
 
-		]);
-	}
-
+        ]);
+    }
 }

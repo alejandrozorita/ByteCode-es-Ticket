@@ -5,7 +5,6 @@ use SistemaTickets\Entities\TicketComentario;
 
 class TicketComentarioTableSeeder extends BaseSeeder
 {
-
     protected $total = 300;
     /**
      * @return Ticket
