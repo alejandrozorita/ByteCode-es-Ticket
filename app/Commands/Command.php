@@ -1,4 +1,4 @@
-<?php namespace App\Commands;
+<?php namespace SistemaTickets\Commands;
 
 abstract class Command {
 

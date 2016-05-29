@@ -16,7 +16,7 @@ class CreateTicketsTable extends Migration {
 		{
 			$table->increments('id');
 
-			$table->string('titulo');
+			$table->string('titulo',200);
 			$table->enum('estado', array('abierto', 'cerrado'));
 
 			$table->integer('user_id')->unsigned();

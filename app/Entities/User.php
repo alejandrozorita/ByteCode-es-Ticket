@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace SistemaTickets\Entities;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;

@@ -1,4 +1,4 @@
-<?php namespace App\Events;
+<?php namespace SistemaTickets\Events;
 
 abstract class Event {
 
