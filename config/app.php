@@ -145,11 +145,6 @@ return [
 		'SistemaTickets\Providers\EventServiceProvider',
 		'SistemaTickets\Providers\RouteServiceProvider',
 
-
-		
-		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class',
-		'Barryvdh\Debugbar\ServiceProvider::class',
-
 	],
 
 	/*
