@@ -9,7 +9,7 @@ class TicketsController extends Controller {
 
 	public function ultimos()
     {
-        dd('ultimos');
+        return view('tickets/lista');
     }
 
 
@@ -33,7 +33,7 @@ class TicketsController extends Controller {
 
     public function detalle($id)
     {
-        dd('detalle');
+        return view('tickets/detalle');
     }
 
 }
