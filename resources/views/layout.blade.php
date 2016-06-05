@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sistema de tickets</title>
 
-
-    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+    {!! HTML::style('/assets/css/style.css') !!}
 
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Slab:300,700' rel='stylesheet' type='text/css'>
@@ -40,20 +39,7 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                    <ul class="nav navbar-nav">
-                        <li role="presentation">
-                            <a href="#">Recientes</a>
-                        </li>
-                        <li role="presentation" class="active">
-                            <a href="#">Populares</a>
-                        </li>
-                        <li role="presentation">
-                            <a href="#">Abiertas</a>
-                        </li>
-                        <li role="presentation">
-                            <a href="#">Finalizadas</a>
-                        </li>
-                    </ul>
+                    {!! HTML::menu !!}
 
 
                     <ul class="nav navbar-nav navbar-right">

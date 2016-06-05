@@ -144,7 +144,12 @@ return [
 		'SistemaTickets\Providers\ConfigServiceProvider',
 		'SistemaTickets\Providers\EventServiceProvider',
 		'SistemaTickets\Providers\RouteServiceProvider',
-		
+
+		/*
+		 * Vendor Service Provider
+		 */
+
+		'Collective\Html\HtmlServiceProvider::class',
 
 
 	],
@@ -194,6 +199,9 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+
+		'Form' => 'Collective\Html\FormFacade::class',
+		'Html' => 'Collective\Html\HtmlFacade::class',
 
 	],
 
