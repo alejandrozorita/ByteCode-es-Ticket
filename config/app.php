@@ -144,6 +144,8 @@ return [
 		'SistemaTickets\Providers\ConfigServiceProvider',
 		'SistemaTickets\Providers\EventServiceProvider',
 		'SistemaTickets\Providers\RouteServiceProvider',
+		
+
 
 	],
 
