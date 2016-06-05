@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TeachMe by duilio.me</title>
+    <title>Sistema de tickets</title>
 
-    <link href="http://teachme.static/assets/css/style.css" rel="stylesheet">
+    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
 
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Slab:300,700' rel='stylesheet' type='text/css'>
@@ -34,7 +34,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="http://duilio.me" target="_blank">duilio.me</a>
+                    <a class="navbar-brand" href="http://bytecode.es/" target="_blank">bytecode.me</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -57,7 +57,7 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Duilio Palacios <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Alejandro Zorita <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="#">Logout</a></li>
                             </ul>
@@ -418,7 +418,7 @@
 
             <hr>
 
-            <p><a href="http://duilio.me" target="_blank">duilio.me</a></p>
+            <p><a href="http://bytecode.es/" target="_blank">bytecode.es</a></p>
 
         </div>
     </div>
