@@ -34,23 +34,23 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="http://bytecode.es/" target="_blank">bytecode.es</a>
+                    <a class="navbar-brand" href="http://bytecode.es/" target="_blank">bytecode.me</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                     <ul class="nav navbar-nav">
                         <li role="presentation">
-                            <a href="http://teachme.dev">Recientes</a>
+                            <a href="#">Recientes</a>
+                        </li>
+                        <li role="presentation" class="active">
+                            <a href="#">Populares</a>
                         </li>
                         <li role="presentation">
-                            <a href="http://teachme.dev/populares">Populares</a>
+                            <a href="#">Abiertas</a>
                         </li>
                         <li role="presentation">
-                            <a href="http://teachme.dev/pendientes">Abiertas</a>
-                        </li>
-                        <li role="presentation">
-                            <a href="http://teachme.dev/tutoriales">Finalizadas</a>
+                            <a href="#">Finalizadas</a>
                         </li>
                     </ul>
 
@@ -59,7 +59,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Alejandro Zorita <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="http://teachme.dev/auth/logout">Logout</a></li>
+                                <li><a href="#">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -72,80 +72,354 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <h2 class="title-show">
-                Magnam impedit voluptatibus architecto quidem iste eum ut.
-                <span class="label label-info absolute highlight">abierta</span>
+            <div class="row">
+                <h1>
+                    Solicitudes Populares
+                    <a href="#" class="btn btn-primary">
+                        Nueva solicitud                    </a>
+                </h1>
 
-            </h2>
-            <h4 class="label label-info news">
-                9 votos            </h4>
+                <p class="label label-info news">
+                    Hay 20 Solicitudes Populares                </p>
 
-            <p class="vote-users">
-                <span class="label label-info">Eddie Reilly I</span>
-                <span class="label label-info">Letha Marks</span>
-                <span class="label label-info">Orpha Quitzon</span>
-                <span class="label label-info">Orpha Quitzon</span>
-                <span class="label label-info">Orpha Quitzon</span>
-                <span class="label label-info">Prof. Robbie Russel V</span>
-                <span class="label label-info">Juanita Senger</span>
-                <span class="label label-info">Geo Armstrong PhD</span>
-                <span class="label label-info">Prof. Ruthe Keebler I</span>
-            </p>
+                <div data-id="25" class="well well-sm request">
+                    <h4 class="list-title">
+                        Culpa natus rerum corrupti impedit.
+                        <span class="label label-info absolute">finalizada</span>
 
-            <form method="POST" action="http://teachme.dev/votar/5" accept-charset="UTF-8"><input name="_token" type="hidden" value="VBIv3EWDAIQuLRW0cGwNQ4OsDKoRhnK2fAEF6UbQ">
-                <!--button type="submit" class="btn btn-primary">Votar</button-->
-                <button type="submit" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-thumbs-up"></span> Votar
-                </button>
-            </form>
+                    </h4>
+                    <p>
+                        <a href="#" class="btn btn-primary btn-vote" title="Votar por este tutorial">
+                            <span class="glyphicon glyphicon-thumbs-up"></span> Votar
+                        </a>
 
-            <h3>Nuevo Comentario</h3>
+                        <a href="#" class="btn btn-hight btn-unvote hide">
+                            <span class="glyphicon glyphicon-thumbs-down"></span> No votar
+                        </a>
 
+                        <a href="#">
+                            <span class="votes-count">12 votos</span>
+                            - <span class="comments-count">0 comentarios</span>.
+                        </a>
 
-            <form method="POST" action="http://teachme.dev/comentar/5" accept-charset="UTF-8"><input name="_token" type="hidden" value="VBIv3EWDAIQuLRW0cGwNQ4OsDKoRhnK2fAEF6UbQ">
-                <div class="form-group">
-                    <label for="comment">Comentarios:</label>
-                    <textarea rows="4" class="form-control" name="comment" cols="50" id="comment"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="link">Enlace:</label>
-                    <input class="form-control" name="link" type="text" id="link">
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar comentario</button>
-            </form>
+                    <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 00:21am</p>
+                    </p>
+                </div>     		                        <div data-id="9" class="well well-sm request">
+                <h4 class="list-title">
+                    Vel et sed ut similique facere ea est.
+                    <span class="label label-info absolute highlight">abierta</span>
 
-            <h3>Comentarios (6)</h3>
+                </h4>
+                <p>
+                    <a href="#" class="btn btn-primary btn-vote hide" title="Votar por este tutorial">
+                        <span class="glyphicon glyphicon-thumbs-up"></span> Votar
+                    </a>
 
-            <div class="well well-sm">
-                <p><strong>Gene Wintheiser</strong></p>
-                <p>Non consectetur sequi facilis nihil qui corporis. Autem saepe ut officiis sed est facilis. Officia quam at vel rerum sunt. Sequi vel quibusdam molestias delectus officia.</p>
-                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 12:21am</p>
+                    <a href="#" class="btn btn-hight btn-unvote">
+                        <span class="glyphicon glyphicon-thumbs-down"></span> No votar
+                    </a>
+
+                    <a href="#">
+                        <span class="votes-count">11 votos</span>
+                        - <span class="comments-count">3 comentarios</span>.
+                    </a>
+
+                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 00:21am</p>
+                </p>
+            </div>     		                        <div data-id="48" class="well well-sm request">
+                <h4 class="list-title">
+                    Tempora dolor numquam animi recusandae dignissimos.
+                    <span class="label label-info absolute highlight">abierta</span>
+
+                </h4>
+                <p>
+                    <a href="#" class="btn btn-primary btn-vote" title="Votar por este tutorial">
+                        <span class="glyphicon glyphicon-thumbs-up"></span> Votar
+                    </a>
+
+                    <a href="#" class="btn btn-hight btn-unvote hide">
+                        <span class="glyphicon glyphicon-thumbs-down"></span> No votar
+                    </a>
+
+                    <a href="http://teachme.static/solicitud/48">
+                        <span class="votes-count">10 votos</span>
+                        - <span class="comments-count">2 comentarios</span>.
+                    </a>
+
+                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 00:21am</p>
+                </p>
+            </div>     		                        <div data-id="5" class="well well-sm request">
+                <h4 class="list-title">
+                    Magnam impedit voluptatibus architecto quidem iste eum ut.
+                    <span class="label label-info absolute highlight">abierta</span>
+
+                </h4>
+                <p>
+                    <a href="#" class="btn btn-primary btn-vote" title="Votar por este tutorial">
+                        <span class="glyphicon glyphicon-thumbs-up"></span> Votar
+                    </a>
+
+                    <a href="#" class="btn btn-hight btn-unvote hide">
+                        <span class="glyphicon glyphicon-thumbs-down"></span> No votar
+                    </a>
+
+                    <a href="http://teachme.static/solicitud/5">
+                        <span class="votes-count">9 votos</span>
+                        - <span class="comments-count">6 comentarios</span>.
+                    </a>
+
+                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 00:21am</p>
+                </p>
+            </div>     		                        <div data-id="43" class="well well-sm request">
+                <h4 class="list-title">
+                    Laboriosam unde nihil porro consequatur ipsa.
+                    <span class="label label-info absolute">finalizada</span>
+
+                </h4>
+                <p>
+                    <a href="#" class="btn btn-primary btn-vote" title="Votar por este tutorial">
+                        <span class="glyphicon glyphicon-thumbs-up"></span> Votar
+                    </a>
+
+                    <a href="#" class="btn btn-hight btn-unvote hide">
+                        <span class="glyphicon glyphicon-thumbs-down"></span> No votar
+                    </a>
+
+                    <a href="http://teachme.static/solicitud/43">
+                        <span class="votes-count">9 votos</span>
+                        - <span class="comments-count">3 comentarios</span>.
+                    </a>
+
+                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 00:21am</p>
+                </p>
+            </div>     		                        <div data-id="45" class="well well-sm request">
+                <h4 class="list-title">
+                    Ut ipsa et est velit.
+                    <span class="label label-info absolute highlight">abierta</span>
+
+                </h4>
+                <p>
+                    <a href="#" class="btn btn-primary btn-vote" title="Votar por este tutorial">
+                        <span class="glyphicon glyphicon-thumbs-up"></span> Votar
+                    </a>
+
+                    <a href="#" class="btn btn-hight btn-unvote hide">
+                        <span class="glyphicon glyphicon-thumbs-down"></span> No votar
+                    </a>
+
+                    <a href="http://teachme.static/solicitud/45">
+                        <span class="votes-count">8 votos</span>
+                        - <span class="comments-count">5 comentarios</span>.
+                    </a>
+
+                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 00:21am</p>
+                </p>
+            </div>     		                        <div data-id="22" class="well well-sm request">
+                <h4 class="list-title">
+                    Molestiae laudantium possimus placeat est.
+                    <span class="label label-info absolute highlight">abierta</span>
+
+                </h4>
+                <p>
+                    <a href="#" class="btn btn-primary btn-vote" title="Votar por este tutorial">
+                        <span class="glyphicon glyphicon-thumbs-up"></span> Votar
+                    </a>
+
+                    <a href="#" class="btn btn-hight btn-unvote hide">
+                        <span class="glyphicon glyphicon-thumbs-down"></span> No votar
+                    </a>
+
+                    <a href="http://teachme.static/solicitud/22">
+                        <span class="votes-count">8 votos</span>
+                        - <span class="comments-count">3 comentarios</span>.
+                    </a>
+
+                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 00:21am</p>
+                </p>
+            </div>     		                        <div data-id="15" class="well well-sm request">
+                <h4 class="list-title">
+                    Voluptatem qui accusantium iste quae voluptatum.
+                    <span class="label label-info absolute highlight">abierta</span>
+
+                </h4>
+                <p>
+                    <a href="#" class="btn btn-primary btn-vote hide" title="Votar por este tutorial">
+                        <span class="glyphicon glyphicon-thumbs-up"></span> Votar
+                    </a>
+
+                    <a href="#" class="btn btn-hight btn-unvote">
+                        <span class="glyphicon glyphicon-thumbs-down"></span> No votar
+                    </a>
+
+                    <a href="http://teachme.static/solicitud/15">
+                        <span class="votes-count">7 votos</span>
+                        - <span class="comments-count">4 comentarios</span>.
+                    </a>
+
+                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 00:21am</p>
+                </p>
+            </div>     		                        <div data-id="18" class="well well-sm request">
+                <h4 class="list-title">
+                    At dolores minima quod rerum iusto.
+                    <span class="label label-info absolute highlight">abierta</span>
+
+                </h4>
+                <p>
+                    <a href="#" class="btn btn-primary btn-vote" title="Votar por este tutorial">
+                        <span class="glyphicon glyphicon-thumbs-up"></span> Votar
+                    </a>
+
+                    <a href="#" class="btn btn-hight btn-unvote hide">
+                        <span class="glyphicon glyphicon-thumbs-down"></span> No votar
+                    </a>
+
+                    <a href="http://teachme.static/solicitud/18">
+                        <span class="votes-count">7 votos</span>
+                        - <span class="comments-count">2 comentarios</span>.
+                    </a>
+
+                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 00:21am</p>
+                </p>
+            </div>     		                        <div data-id="12" class="well well-sm request">
+                <h4 class="list-title">
+                    Molestias tempore hic et sapiente.
+                    <span class="label label-info absolute">finalizada</span>
+
+                </h4>
+                <p>
+                    <a href="#" class="btn btn-primary btn-vote" title="Votar por este tutorial">
+                        <span class="glyphicon glyphicon-thumbs-up"></span> Votar
+                    </a>
+
+                    <a href="#" class="btn btn-hight btn-unvote hide">
+                        <span class="glyphicon glyphicon-thumbs-down"></span> No votar
+                    </a>
+
+                    <a href="http://teachme.static/solicitud/12">
+                        <span class="votes-count">7 votos</span>
+                        - <span class="comments-count">1 comentarios</span>.
+                    </a>
+
+                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 00:21am</p>
+                </p>
+            </div>     		                        <div data-id="4" class="well well-sm request">
+                <h4 class="list-title">
+                    Est asperiores qui pariatur non quis facilis.
+                    <span class="label label-info absolute highlight">abierta</span>
+
+                </h4>
+                <p>
+                    <a href="#" class="btn btn-primary btn-vote" title="Votar por este tutorial">
+                        <span class="glyphicon glyphicon-thumbs-up"></span> Votar
+                    </a>
+
+                    <a href="#" class="btn btn-hight btn-unvote hide">
+                        <span class="glyphicon glyphicon-thumbs-down"></span> No votar
+                    </a>
+
+                    <a href="http://teachme.static/solicitud/4">
+                        <span class="votes-count">7 votos</span>
+                        - <span class="comments-count">2 comentarios</span>.
+                    </a>
+
+                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 00:21am</p>
+                </p>
+            </div>     		                        <div data-id="42" class="well well-sm request">
+                <h4 class="list-title">
+                    Et ducimus voluptatem officiis officia optio error sit suscipit.
+                    <span class="label label-info absolute highlight">abierta</span>
+
+                </h4>
+                <p>
+                    <a href="#" class="btn btn-primary btn-vote" title="Votar por este tutorial">
+                        <span class="glyphicon glyphicon-thumbs-up"></span> Votar
+                    </a>
+
+                    <a href="#" class="btn btn-hight btn-unvote hide">
+                        <span class="glyphicon glyphicon-thumbs-down"></span> No votar
+                    </a>
+
+                    <a href="http://teachme.static/solicitud/42">
+                        <span class="votes-count">7 votos</span>
+                        - <span class="comments-count">3 comentarios</span>.
+                    </a>
+
+                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 00:21am</p>
+                </p>
+            </div>     		                        <div data-id="40" class="well well-sm request">
+                <h4 class="list-title">
+                    Quisquam illo cum rerum et temporibus.
+                    <span class="label label-info absolute highlight">abierta</span>
+
+                </h4>
+                <p>
+                    <a href="#" class="btn btn-primary btn-vote" title="Votar por este tutorial">
+                        <span class="glyphicon glyphicon-thumbs-up"></span> Votar
+                    </a>
+
+                    <a href="#" class="btn btn-hight btn-unvote hide">
+                        <span class="glyphicon glyphicon-thumbs-down"></span> No votar
+                    </a>
+
+                    <a href="http://teachme.static/solicitud/40">
+                        <span class="votes-count">6 votos</span>
+                        - <span class="comments-count">1 comentarios</span>.
+                    </a>
+
+                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 00:21am</p>
+                </p>
+            </div>     		                        <div data-id="39" class="well well-sm request">
+                <h4 class="list-title">
+                    Porro in voluptatum placeat pariatur a aliquam et voluptatem.
+                    <span class="label label-info absolute">finalizada</span>
+
+                </h4>
+                <p>
+                    <a href="#" class="btn btn-primary btn-vote" title="Votar por este tutorial">
+                        <span class="glyphicon glyphicon-thumbs-up"></span> Votar
+                    </a>
+
+                    <a href="#" class="btn btn-hight btn-unvote hide">
+                        <span class="glyphicon glyphicon-thumbs-down"></span> No votar
+                    </a>
+
+                    <a href="http://teachme.static/solicitud/39">
+                        <span class="votes-count">6 votos</span>
+                        - <span class="comments-count">0 comentarios</span>.
+                    </a>
+
+                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 00:21am</p>
+                </p>
+            </div>     		                        <div data-id="38" class="well well-sm request">
+                <h4 class="list-title">
+                    Rem voluptatem quod et ipsum consequatur.
+                    <span class="label label-info absolute highlight">abierta</span>
+
+                </h4>
+                <p>
+                    <a href="#" class="btn btn-primary btn-vote" title="Votar por este tutorial">
+                        <span class="glyphicon glyphicon-thumbs-up"></span> Votar
+                    </a>
+
+                    <a href="#" class="btn btn-hight btn-unvote hide">
+                        <span class="glyphicon glyphicon-thumbs-down"></span> No votar
+                    </a>
+
+                    <a href="http://teachme.static/solicitud/38">
+                        <span class="votes-count">6 votos</span>
+                        - <span class="comments-count">4 comentarios</span>.
+                    </a>
+
+                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 00:21am</p>
+                </p>
             </div>
-            <div class="well well-sm">
-                <p><strong>Simone Herzog</strong></p>
-                <p>Nostrum tenetur minus repellat. Iusto vitae perferendis optio praesentium harum quos. Quaerat aspernatur dolorem quos omnis culpa eos. Et ab omnis quia in dolorem provident qui.</p>
-                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 12:21am</p>
+                <ul class="pagination"><li class="disabled"><span>&laquo;</span></li> <li class="active"><span>1</span></li><li><a href="http://teachme.static/populares/?page=2">2</a></li> <li><a href="http://teachme.static/populares/?page=2" rel="next">&raquo;</a></li></ul>
             </div>
-            <div class="well well-sm">
-                <p><strong>Hailie Daniel</strong></p>
-                <p>Unde earum quia quia aliquid. Autem voluptatem et quae veritatis nihil suscipit ut. In qui est qui rerum autem aut voluptatem. Corrupti nobis inventore voluptate et quia ea. Dicta qui ut in.</p>
-                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 12:21am</p>
-            </div>
-            <div class="well well-sm">
-                <p><strong>Ms. Carmella Herman II</strong></p>
-                <p>Numquam suscipit optio blanditiis aut soluta laborum sequi est. Reiciendis fuga nihil blanditiis veniam repellat quia explicabo. Voluptates corrupti nihil porro voluptas voluptatem temporibus repellat quaerat. Qui saepe rerum officia numquam et ex voluptatem. Cum eum eum repudiandae dolorem voluptas.</p>
-                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 12:21am</p>
-            </div>
-            <div class="well well-sm">
-                <p><strong>Cierra Boyle III</strong></p>
-                <p>Omnis ut laudantium itaque optio nihil. Rerum magnam recusandae quia quisquam delectus et sint possimus. Nostrum perspiciatis illo et ut sed perferendis.</p>
-                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 12:21am</p>
-            </div>
-            <div class="well well-sm">
-                <p><strong>Kayla Gerlach</strong></p>
-                <p>Est consectetur mollitia natus nam. Sequi laborum alias nam excepturi laudantium nulla. Mollitia suscipit cum fugiat. Incidunt tempore velit molestiae quo aspernatur quidem.</p>
-                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 12:21am</p>
-            </div>
+
+            <hr>
+
+            <p><a href="http://bytecode.es/" target="_blank">bytecode.es</a></p>
+
         </div>
     </div>
 </div>
@@ -153,5 +427,6 @@
 <!-- Scripts -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
 </body>
 </html>
