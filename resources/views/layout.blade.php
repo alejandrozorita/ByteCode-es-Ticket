@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sistema de tickets</title>
 
-    {!! HTML::style('/assets/css/style.css') !!}
+    {!! Html::style('/assets/css/style.css') !!}
 
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Slab:300,700' rel='stylesheet' type='text/css'>
