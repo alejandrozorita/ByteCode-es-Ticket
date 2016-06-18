@@ -144,12 +144,13 @@ return [
 		'SistemaTickets\Providers\ConfigServiceProvider',
 		'SistemaTickets\Providers\EventServiceProvider',
 		'SistemaTickets\Providers\RouteServiceProvider',
+		'SistemaTickets\Providers\HtmlServiceProvider',
 
 		/*
 		 * Vendor Service Provider
 		 */
 
-		'Collective\Html\HtmlServiceProvider',
+
 
 
 	],

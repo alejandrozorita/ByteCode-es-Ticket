@@ -39,7 +39,7 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                    {!! HTML::menu !!}
+                    {!! HTML::menu() !!}
 
 
                     <ul class="nav navbar-nav navbar-right">

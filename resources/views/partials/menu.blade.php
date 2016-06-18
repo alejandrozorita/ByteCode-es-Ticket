@@ -1,6 +1,6 @@
 <?php
 
-
+echo '
 <ul class="nav navbar-nav">
     <li role="presentation">
         <a href="#">Recientes</a>
@@ -14,4 +14,4 @@
     <li role="presentation">
         <a href="#">Finalizadas</a>
     </li>
-</ul>
+</ul>';
