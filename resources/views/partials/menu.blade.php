@@ -1,17 +1,7 @@
-<?php
-
-echo '
 <ul class="nav navbar-nav">
-    <li role="presentation">
-        <a href="#">Recientes</a>
+@foreach ( $elementos as $route => $texto)
+    <li role="presentation" {!! Html::classes(['active' => Route::is($route)]) !!}>
+        <a href="{{ route($route) }}">{{ $texto }}</a>
     </li>
-    <li role="presentation" class="active">
-        <a href="#">Populares</a>
-    </li>
-    <li role="presentation">
-        <a href="#">Abiertas</a>
-    </li>
-    <li role="presentation">
-        <a href="#">Finalizadas</a>
-    </li>
-</ul>';
+@endforeach
+</ul>
