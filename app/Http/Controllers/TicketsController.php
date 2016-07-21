@@ -1,15 +1,20 @@
-<?php namespace SistemaTickets\Http\Controllers;
+<?php 
+namespace SistemaTickets\Http\Controllers;
 
 use SistemaTickets\Http\Requests;
+use SistemaTickets\Entities\Ticket;
 use SistemaTickets\Http\Controllers\Controller;
+
 
 use Illuminate\Http\Request;
 
 class TicketsController extends Controller {
-
+ 
 	public function ultimos()
     {
-        return view('tickets/lista');
+        $tickets = Ticket::orderBy('created_at', 'DESC')->get();
+
+        return view('tickets/lista', compact('tickets'));
     }
 
 
