@@ -12,7 +12,7 @@ class TicketsController extends Controller {
  
 	public function ultimos()
     {
-        $tickets = Ticket::orderBy('created_at', 'DESC')->get();
+        $tickets = Ticket::orderBy('created_at', 'DESC')->paginate();
 
         return view('tickets/lista', compact('tickets'));
     }
@@ -38,7 +38,9 @@ class TicketsController extends Controller {
 
     public function detalle($id)
     {
-        return view('tickets/detalle');
+        $ticket = Ticket::findOrFail($id);
+
+        return view('tickets/detalle', compact('ticket'));
     }
 
 }

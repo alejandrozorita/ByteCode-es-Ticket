@@ -1,12 +1,14 @@
-@extends('layout)
+@extends('layout')
 
 @section('contenido')
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <h2 class="title-show">
-                Magnam impedit voluptatibus architecto quidem iste eum ut.
-                <span class="label label-info absolute highlight">abierta</span>
+                {{ $ticket->titulo }}
+
+                @include('tickets.include.estado', compact('ticket'))
+                
 
             </h2>
             <h4 class="label label-info news">
@@ -47,37 +49,10 @@
             </form>
 
             <h3>Comentarios (6)</h3>
+            @foreach($ticket->comentarios() as $comentario)
+                @include('tickets.include.comentario')
+            @endforeach
 
-            <div class="well well-sm">
-                <p><strong>Gene Wintheiser</strong></p>
-                <p>Non consectetur sequi facilis nihil qui corporis. Autem saepe ut officiis sed est facilis. Officia quam at vel rerum sunt. Sequi vel quibusdam molestias delectus officia.</p>
-                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 12:21am</p>
-            </div>
-            <div class="well well-sm">
-                <p><strong>Simone Herzog</strong></p>
-                <p>Nostrum tenetur minus repellat. Iusto vitae perferendis optio praesentium harum quos. Quaerat aspernatur dolorem quos omnis culpa eos. Et ab omnis quia in dolorem provident qui.</p>
-                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 12:21am</p>
-            </div>
-            <div class="well well-sm">
-                <p><strong>Hailie Daniel</strong></p>
-                <p>Unde earum quia quia aliquid. Autem voluptatem et quae veritatis nihil suscipit ut. In qui est qui rerum autem aut voluptatem. Corrupti nobis inventore voluptate et quia ea. Dicta qui ut in.</p>
-                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 12:21am</p>
-            </div>
-            <div class="well well-sm">
-                <p><strong>Ms. Carmella Herman II</strong></p>
-                <p>Numquam suscipit optio blanditiis aut soluta laborum sequi est. Reiciendis fuga nihil blanditiis veniam repellat quia explicabo. Voluptates corrupti nihil porro voluptas voluptatem temporibus repellat quaerat. Qui saepe rerum officia numquam et ex voluptatem. Cum eum eum repudiandae dolorem voluptas.</p>
-                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 12:21am</p>
-            </div>
-            <div class="well well-sm">
-                <p><strong>Cierra Boyle III</strong></p>
-                <p>Omnis ut laudantium itaque optio nihil. Rerum magnam recusandae quia quisquam delectus et sint possimus. Nostrum perspiciatis illo et ut sed perferendis.</p>
-                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 12:21am</p>
-            </div>
-            <div class="well well-sm">
-                <p><strong>Kayla Gerlach</strong></p>
-                <p>Est consectetur mollitia natus nam. Sequi laborum alias nam excepturi laudantium nulla. Mollitia suscipit cum fugiat. Incidunt tempore velit molestiae quo aspernatur quidem.</p>
-                <p class="date-t"><span class="glyphicon glyphicon-time"></span> 01/04/2015 12:21am</p>
-            </div>
         </div>
     </div>
 </div>
