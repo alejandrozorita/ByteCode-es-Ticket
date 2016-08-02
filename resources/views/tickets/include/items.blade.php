@@ -14,8 +14,8 @@
         </a>
 
         <a href="{{ route('tickets.detalle', $ticket->id) }}">
-            <span class="votes-count"> votos</span>
-            - <span class="comments-count">0 comentarios</span>.
+            <span class="votes-count"> {{ $ticket->votos->count() }} votos</span>
+            - <span class="comments-count">{{ $ticket->comentarios->count() }} comentarios</span>.
         </a>
 
 	    <p class="date-t">

@@ -12,18 +12,13 @@
 
             </h2>
             <h4 class="label label-info news">
-                9 votos            </h4>
+                {{ $ticket->votos->count() }} votos            </h4>
 
             <p class="vote-users">
-                <span class="label label-info">Eddie Reilly I</span>
-                <span class="label label-info">Letha Marks</span>
-                <span class="label label-info">Orpha Quitzon</span>
-                <span class="label label-info">Orpha Quitzon</span>
-                <span class="label label-info">Orpha Quitzon</span>
-                <span class="label label-info">Prof. Robbie Russel V</span>
-                <span class="label label-info">Juanita Senger</span>
-                <span class="label label-info">Geo Armstrong PhD</span>
-                <span class="label label-info">Prof. Ruthe Keebler I</span>
+                @foreach($ticket->votos as $voto)
+                    <span class="label label-info">{{ $voto->user->name }}</span>
+                @endforeach
+            
             </p>
 
             <form method="POST" action="http://teachme.dev/votar/5" accept-charset="UTF-8"><input name="_token" type="hidden" value="VBIv3EWDAIQuLRW0cGwNQ4OsDKoRhnK2fAEF6UbQ">
@@ -47,9 +42,8 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Enviar comentario</button>
             </form>
-
-            <h3>Comentarios (6)</h3>
-            @foreach($ticket->comentarios() as $comentario)
+            <h3>Comentarios ({{ $ticket->comentarios->count() }})</h3>
+            @foreach($ticket->comentarios as $comentario)
                 @include('tickets.include.comentario')
             @endforeach
 
