@@ -20,19 +20,24 @@ class TicketsController extends Controller {
 
     public function populares()
     {
-        dd('ultimos');
-    }
+        $tickets = Ticket::orderBy('created_at', 'DESC')->paginate();
+
+        return view('tickets/lista', compact('tickets'));
 
 
     public function pendientes()
     {
-        dd('pendientes');
+        $tickets = Ticket::orderBy('created_at', 'DESC')->paginate();
+
+        return view('tickets/lista', compact('tickets'));
     }
 
 
     public function cerrados()
     {
-        dd('cerrados');
+        $tickets = Ticket::orderBy('created_at', 'DESC')->paginate();
+
+        return view('tickets/lista', compact('tickets'));
     }
 
 

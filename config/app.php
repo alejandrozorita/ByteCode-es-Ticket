@@ -52,7 +52,7 @@ return [
 	|
 	*/
 
-	'locale' => 'en',
+	'locale' => 'es',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -146,9 +146,13 @@ return [
 		'SistemaTickets\Providers\RouteServiceProvider',
 		'SistemaTickets\Providers\HtmlServiceProvider',
 
+
+
 		/*
 		 * Vendor Service Provider
 		 */
+
+		Barryvdh\Debugbar\ServiceProvider::class,
 
 
 
