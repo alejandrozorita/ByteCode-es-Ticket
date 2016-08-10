@@ -7,14 +7,14 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="row">
                 <h1>
-                    Solicitudes Populares
+                    {{ $title = trans(Route::currentRouteName().'_title') }}
                     <a href="#" class="btn btn-primary">
                         Nueva solicitud
                     </a>
                 </h1>
 
                 <p class="label label-info news">
-                    Hay {{ $tickets->total() }} Solicitudes Populares
+                    Hay {{ $tickets->total() }} {{ $title }}
                 </p>
 
                 @foreach($tickets as $ticket)

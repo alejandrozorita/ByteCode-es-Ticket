@@ -12,6 +12,7 @@ class TicketsController extends Controller {
  
 	public function ultimos()
     {
+
         $tickets = Ticket::orderBy('created_at', 'DESC')->paginate();
 
         return view('tickets/lista', compact('tickets'));
@@ -23,7 +24,7 @@ class TicketsController extends Controller {
         $tickets = Ticket::orderBy('created_at', 'DESC')->paginate();
 
         return view('tickets/lista', compact('tickets'));
-
+    }
 
     public function pendientes()
     {
