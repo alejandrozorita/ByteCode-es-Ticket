@@ -14,7 +14,9 @@
                 </h1>
 
                 <p class="label label-info news">
-                    Hay {{ $tickets->total() }} {{ $title }}
+
+                    {{ Lang::choice(Route::currentRouteName().'_total',$tickets->total()) }}
+
                 </p>
 
                 @foreach($tickets as $ticket)
