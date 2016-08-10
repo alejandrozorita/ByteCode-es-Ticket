@@ -15,7 +15,7 @@ Route::get('/', ['as'=>'tickets.ultimos', 'uses' => 'TicketsController@ultimos']
 
 Route::get('/populares', ['as'=>'tickets.populares', 'uses' => 'TicketsController@populares']);
 
-Route::get('/pendientes', ['as'=>'tickets.pendientes', 'uses' => 'TicketsController@pendietes']);
+Route::get('/pendientes', ['as'=>'tickets.pendientes', 'uses' => 'TicketsController@pendientes']);
 
 Route::get('/cerrados', ['as'=>'tickets.cerrados', 'uses' => 'TicketsController@cerrados']);
 
