@@ -24,11 +24,11 @@ return [
 	"between"              => [
 		"numeric" => "The :attribute must be between :min and :max.",
 		"file"    => "The :attribute must be between :min and :max kilobytes.",
-		"string"  => "The :attribute must be between :min and :max characters.",
+		"string"  => "EL campo :attribute debe estar entre :min y :max caracteres.",
 		"array"   => "The :attribute must have between :min and :max items.",
 	],
 	"boolean"              => "The :attribute field must be true or false.",
-	"confirmed"            => "The :attribute confirmation does not match.",
+	"confirmed"            => "El campo :attribute de confirmación no es igual.",
 	"date"                 => "The :attribute is not a valid date.",
 	"date_format"          => "The :attribute does not match the format :format.",
 	"different"            => "The :attribute and :other must be different.",
@@ -51,7 +51,7 @@ return [
 	"min"                  => [
 		"numeric" => "The :attribute must be at least :min.",
 		"file"    => "The :attribute must be at least :min kilobytes.",
-		"string"  => "The :attribute must be at least :min characters.",
+		"string"  => "El :attribute debe tener como mínimo :min caracteres.",
 		"array"   => "The :attribute must have at least :min items.",
 	],
 	"not_in"               => "The selected :attribute is invalid.",
@@ -70,8 +70,8 @@ return [
 		"string"  => "The :attribute must be :size characters.",
 		"array"   => "The :attribute must contain :size items.",
 	],
-	"unique"               => "The :attribute has already been taken.",
-	"url"                  => "The :attribute format is invalid.",
+	"unique"               => "El :attribute ya está en uso.",
+	"url"                  => "La :attribute tien un formato no válido.",
 	"timezone"             => "The :attribute must be a valid zone.",
 
 	/*
