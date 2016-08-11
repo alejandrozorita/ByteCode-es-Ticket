@@ -1,4 +1,6 @@
-<?php namespace SistemaTickets\Http\Controllers\Auth;
+<?php 
+
+namespace SistemaTickets\Http\Controllers\Auth;
 
 use SistemaTickets\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
@@ -34,5 +36,15 @@ class AuthController extends Controller
         $this->registrar = $registrar;
 
         $this->middleware('guest', ['except' => 'getLogout']);
+    }
+
+    /**
+     * Get the post register / login redirect path.
+     *
+     * @return string
+     */
+    public function redirectPath()
+    {
+        return '/';
     }
 }
