@@ -28,7 +28,7 @@ return [
 	|
 	*/
 
-	'model' => 'SistemaTickets\User',
+	'model' => 'SistemaTickets\Entities\User',
 
 	/*
 	|--------------------------------------------------------------------------
