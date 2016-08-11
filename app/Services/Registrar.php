@@ -1,6 +1,6 @@
 <?php namespace SistemaTickets\Services;
 
-use SistemaTickets\User;
+use SistemaTickets\Entities\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
