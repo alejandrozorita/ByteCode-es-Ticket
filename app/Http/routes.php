@@ -15,12 +15,42 @@ Route::get('/', ['as'=>'tickets.ultimos', 'uses' => 'TicketsController@ultimos']
 
 Route::get('/populares', ['as'=>'tickets.populares', 'uses' => 'TicketsController@populares']);
 
-Route::get('/pendientes', ['as'=>'tickets.pendientes', 'uses' => 'TicketsController@pendientes']);
 
-Route::get('/cerrados', ['as'=>'tickets.cerrados', 'uses' => 'TicketsController@cerrados']);
+Route::get('/pendientes', [
 
-Route::get('/solicitud/{id}', ['as'=>'tickets.detalle', 'uses' => 'TicketsController@detalle']);
+	'as'=>'tickets.pendientes', 
 
+	'uses' => 'TicketsController@pendientes'
+
+]);
+
+Route::get('/cerrados', [
+
+	'as'=>'tickets.cerrados', 
+
+	'uses' => 'TicketsController@cerrados'
+
+]);
+
+Route::get('/solicitud/{id}', [
+
+	'as'=>'tickets.detalle', 
+
+	'uses' => 'TicketsController@detalle'
+
+]);
+
+
+Route::group(['middleware' => 'auth'], function() {
+
+	Route::get('/solicitar' ,[
+
+		'as' => 'ticket.create',
+
+		'uses' => 'TicketsController@create'
+
+		]);
+});
 
 
 Route::get('home', 'HomeController@index');
