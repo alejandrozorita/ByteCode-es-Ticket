@@ -11,9 +11,21 @@
 |
 */
 
-Route::get('/', ['as'=>'tickets.ultimos', 'uses' => 'TicketsController@ultimos']);
+Route::get('/', [
 
-Route::get('/populares', ['as'=>'tickets.populares', 'uses' => 'TicketsController@populares']);
+	'as'=>'tickets.ultimos', 
+
+	'uses' => 'TicketsController@ultimos'
+
+]);
+
+Route::get('/populares', [
+
+	'as'=>'tickets.populares',
+
+	'uses' => 'TicketsController@populares'
+
+]);
 
 
 Route::get('/pendientes', [
@@ -49,7 +61,17 @@ Route::group(['middleware' => 'auth'], function() {
 
 		'uses' => 'TicketsController@create'
 
-		]);
+	]);
+
+	Route::get('/solicitar' ,[
+
+		'as' => 'ticket.store',
+
+		'uses' => 'TicketsController@create'
+
+	]);
+
+
 });
 
 
