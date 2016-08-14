@@ -6,6 +6,8 @@ use SistemaTickets\Entities\Ticket;
 use SistemaTickets\Http\Controllers\Controller;
 
 
+use Illuminate\Auth\Guard;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 
 class TicketsController extends Controller {
@@ -58,9 +60,36 @@ class TicketsController extends Controller {
     }
 
 
-    public function store(Request $request)
+    public function store(Request $request, Guard $guard)
     {
-        dd($request->all());
+        $this->validate($request, [
+            'title' => 'required|max:120'
+        ]);
+
+        $ticket = $auth->user()->tickets()->create([
+
+            'title' => $request->get('title'),
+
+            'estado' => 'abierto'
+
+            ]);
+
+        /*
+        Forma antigua de crear objeto 
+
+        $ticket = new Ticket();
+ 
+        $ticket->titulo = $request->title;
+
+        $ticket->estado = 'abierto';
+
+        $ticket->user_id = $guard->user()->id;
+
+        $ticket->save();
+
+        */
+
+        return \Redirect::route('tickets.detalle', $ticket->id);
     }
 
 }
