@@ -21,12 +21,24 @@
             
             </p>
 
-            <form method="POST" action="http://teachme.dev/votar/5" accept-charset="UTF-8"><input name="_token" type="hidden" value="VBIv3EWDAIQuLRW0cGwNQ4OsDKoRhnK2fAEF6UbQ">
-                <!--button type="submit" class="btn btn-primary">Votar</button-->
+            {!! Form::open(['route' => ['voto.guardar', $ticket->id], 'method' => 'POST']) !!}
+
+                 <!--button type="submit" class="btn btn-primary">Votar</button-->
                 <button type="submit" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-thumbs-up"></span> Votar
-                </button>
-            </form>
+                    <span class="glyphicon glyphicon-thumbs-up"></span> Votar</button>
+
+            {!! Form::close() !!}
+
+
+            {!! Form::open(['route' => ['voto.borrar', $ticket->id] , 'method' => 'DELETE']) !!}
+
+                 <!--button type="submit" class="btn btn-primary">Votar</button-->
+                <button type="submit" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-thumbs-up"></span> Quitar voto</button>
+
+            {!! Form::close() !!}
+               
+
 
             <h3>Nuevo Comentario</h3>
 
