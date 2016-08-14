@@ -66,7 +66,7 @@ class TicketsController extends Controller {
             'title' => 'required|max:120'
         ]);
 
-        $ticket = $auth->user()->tickets()->create([
+        $ticket = $guard->user()->tickets()->create([
 
             'title' => $request->get('title'),
 
