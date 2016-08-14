@@ -42,10 +42,10 @@ return [
 	"integer"              => "The :attribute must be an integer.",
 	"ip"                   => "The :attribute must be a valid IP address.",
 	"max"                  => [
-		"numeric" => "The :attribute may not be greater than :max.",
-		"file"    => "The :attribute may not be greater than :max kilobytes.",
-		"string"  => "The :attribute may not be greater than :max characters.",
-		"array"   => "The :attribute may not have more than :max items.",
+		"numeric" => "El :attribute may not be greater than :max.",
+		"file"    => "El :attribute may not be greater than :max kilobytes.",
+		"string"  => "El :attribute may not be greater than :max characters.",
+		"array"   => "El :attribute may not have more than :max items.",
 	],
 	"mimes"                => "The :attribute must be a file of type: :values.",
 	"min"                  => [
@@ -57,7 +57,7 @@ return [
 	"not_in"               => "The selected :attribute is invalid.",
 	"numeric"              => "The :attribute must be a number.",
 	"regex"                => "The :attribute format is invalid.",
-	"required"             => "The :attribute field is required.",
+	"required"             => "El :attribute field is required.",
 	"required_if"          => "The :attribute field is required when :other is :value.",
 	"required_with"        => "The :attribute field is required when :values is present.",
 	"required_with_all"    => "The :attribute field is required when :values is present.",
@@ -102,6 +102,8 @@ return [
 	|
 	*/
 
-	'attributes' => [],
+	'attributes' => [
+		'title' => 'Título'
+	],
 
 ];
