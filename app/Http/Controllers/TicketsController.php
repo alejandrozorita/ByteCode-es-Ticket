@@ -60,15 +60,16 @@ class TicketsController extends Controller {
     }
 
 
-    public function store(Request $request, Guard $guard)
+    public function store(Request $request, Guard $auth)
     {
+
         $this->validate($request, [
             'title' => 'required|max:120'
         ]);
 
-        $ticket = $guard->user()->tickets()->create([
+        $ticket = $auth->user()->tickets()->create([
 
-            'title' => $request->get('title'),
+            'titulo' => $request->get('title'),
 
             'estado' => 'abierto'
 
@@ -83,7 +84,7 @@ class TicketsController extends Controller {
 
         $ticket->estado = 'abierto';
 
-        $ticket->user_id = $guard->user()->id;
+        $ticket->user_id = $auth->user()->id;
 
         $ticket->save();
 

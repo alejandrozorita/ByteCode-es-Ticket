@@ -37,11 +37,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function tickets()
     {
-        return $this->hasMany(Tickets::class);
+        return $this->hasMany(Ticket::class);
     }
 
     public function votos()
     {
-        return $this->belongsToMany(Tickets::class, 'ticket_votos');
+        return $this->belongsToMany(Ticket::class, 'ticket_votos');
     }
 }
