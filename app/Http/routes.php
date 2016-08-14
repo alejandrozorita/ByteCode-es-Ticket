@@ -63,11 +63,48 @@ Route::group(['middleware' => 'auth'], function() {
 
 	]);
 
-	Route::get('/solicitar' ,[
+
+	//Crear
+
+	Route::post('/solicitar' ,[
 
 		'as' => 'ticket.store',
 
-		'uses' => 'TicketsController@create'
+		'uses' => 'TicketsController@store'
+
+	]);
+
+
+	//Votación
+
+
+	Route::post('/votar/{id}' ,[
+
+		'as' => 'voto.guardar',
+
+		'uses' => 'VotosController@guardar'
+
+	]);
+
+
+	//Eliminar
+
+	Route::delete('/borrar/{id}' ,[
+
+		'as' => 'voto.borrar',
+
+		'uses' => 'VotosController@borrar'
+
+	]);
+
+
+	//Actualizar-Comentarios
+
+	Route::delete('/comentar/{id}' ,[
+
+		'as' => 'voto.comentario',
+
+		'uses' => 'VotosController@comentario'
 
 	]);
 
