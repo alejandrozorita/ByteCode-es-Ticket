@@ -8,7 +8,7 @@
                 {{ $ticket->titulo }}
 
                 @include('tickets.include.estado', compact('ticket'))
-                
+                 
 
             </h2>
 
@@ -52,18 +52,19 @@
 
             <h3>Nuevo Comentario</h3>
 
+            @include('partials.error')
 
-            <form method="POST" action="http://teachme.dev/comentar/5" accept-charset="UTF-8"><input name="_token" type="hidden" value="VBIv3EWDAIQuLRW0cGwNQ4OsDKoRhnK2fAEF6UbQ">
+            {!! Form::open(['route' => ['voto.comentario', $ticket->id], 'method' => 'POST']) !!}
                 <div class="form-group">
-                    <label for="comment">Comentarios:</label>
-                    <textarea rows="4" class="form-control" name="comment" cols="50" id="comment"></textarea>
+                    <label for="comentario">Comentarios:</label>
+                    <textarea rows="4" class="form-control" name="comentario" cols="50" id="comentario"> {{ old('comentario') }} </textarea>
                 </div>
                 <div class="form-group">
                     <label for="link">Enlace:</label>
-                    <input class="form-control" name="link" type="text" id="link">
+                    <input class="form-control" name="link" type="text" id="link" value="{{ old('link') }}">
                 </div>
                 <button type="submit" class="btn btn-primary">Enviar comentario</button>
-            </form>
+            {!! Form::close() !!}
             <h3>Comentarios ({{ $ticket->comentarios->count() }})</h3>
             @foreach($ticket->comentarios as $comentario)
                 @include('tickets.include.comentario')

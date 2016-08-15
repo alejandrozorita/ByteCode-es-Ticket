@@ -100,11 +100,11 @@ Route::group(['middleware' => 'auth'], function() {
 
 	//Actualizar-Comentarios
 
-	Route::delete('/comentar/{id}' ,[
+	Route::post('/comentar/{id}' ,[
 
 		'as' => 'voto.comentario',
 
-		'uses' => 'VotosController@comentario'
+		'uses' => 'ComentarioController@nuevo'
 
 	]);
 

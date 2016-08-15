@@ -5,6 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 class TicketComentario extends Model
 {
 
+	protected $fillable = ['comentario' , 'link'];
+	
 	public function ticket()
     {
     	return $this->belongsTo(Ticket::class);
