@@ -5,6 +5,7 @@
 
     </h4>
     <p>
+     
         <a href="#" class="btn btn-primary btn-vote" title="Votar por este tutorial">
             <span class="glyphicon glyphicon-thumbs-up"></span> Votar
         </a>

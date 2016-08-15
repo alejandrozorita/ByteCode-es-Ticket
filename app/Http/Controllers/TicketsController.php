@@ -15,7 +15,7 @@ class TicketsController extends Controller {
 	public function ultimos()
     {
 
-        $tickets = Ticket::orderBy('created_at', 'DESC')->paginate();
+        $tickets = Ticket::orderBy('created_at', 'DESC')->with('autor','comentarios','votos')->paginate(20);
 
         return view('tickets/lista', compact('tickets'));
     }
