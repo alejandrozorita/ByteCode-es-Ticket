@@ -1,5 +1,6 @@
 <?php namespace SistemaTickets\Http\Controllers;
 
+use Illuminate\Auth\Guard;
 use SistemaTickets\Http\Requests;
 use SistemaTickets\Http\Controllers\Controller;
 use SistemaTickets\Entities\Ticket;
@@ -23,7 +24,7 @@ class ComentarioController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function nuevo(Request $request)
+	public function nuevo($id, Request $request, Guard $auth)
 	{
 		$this->validate($request, [
 
@@ -34,6 +35,18 @@ class ComentarioController extends Controller {
 		]);
 
 		$comentario = new TicketComentario($request->all());
+
+		$comentario->user_id = $auth->id();
+
+		$ticket = Ticket::findOrFail($id);
+
+		$ticket->comentarios()->save($comentario);
+
+
+		session()->flash('success', 'Comentario guardado correctamente');
+		
+		return redirect()->back();
+
 
 		//$comentario = new TicketComentario($request->only(['comentario', 'link']));
 

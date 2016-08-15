@@ -6,11 +6,14 @@
         <div class="col-md-10 col-md-offset-1">
             <h2 class="title-show">
                 {{ $ticket->titulo }}
-
-                @include('tickets.include.estado', compact('ticket'))
-                 
-
+                @include('tickets.include.estado', compact('ticket'))          
             </h2>
+
+            @if (Session::has('success'))
+                <div class="alert alert-success"> 
+                    {{ Session::get('success') }}
+                </div>
+            @endif  
 
             <p class="date-c">
                 <span class="glyphicon glyphicon-time "></span>
