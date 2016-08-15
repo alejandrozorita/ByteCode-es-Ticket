@@ -73,4 +73,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
         return true;
     }
+
+
+    public function getNombreAttribute()
+    {
+        return $this->name . " " . $this->email;
+    }
 }

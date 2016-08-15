@@ -20,6 +20,8 @@
 
 	    <p class="date-t">
 	    <span class="glyphicon glyphicon-time"></span> {{ $ticket->created_at->format('d/m/Y h:ia') }}
+
+        Por {{ $ticket->autor->nombre }}
 	    </p>
     </p>
 </div>  
