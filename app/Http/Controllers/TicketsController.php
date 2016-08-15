@@ -11,11 +11,29 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 
 class TicketsController extends Controller {
+
+
+    protected function selectTicketsList()
+    {
+        return Ticket::selectRaw(
+
+            'tickets.*, '
+            . '( SELECT COUNT(*) FROM ticket_comentarios WHERE ticket_comentarios.ticket_id = tickets.id ) as num_comentarios,'
+            . '( SELECT COUNT(*) FROM ticket_votos WHERE ticket_votos.ticket_id = tickets.id ) as num_votos'
+
+        )
+
+        //->orderBy('created_at', 'DESC')->with('autor','comentarios','votos ')->paginate(20);
+        ->with('autor');
+    }
  
 	public function ultimos()
     {
 
-        $tickets = Ticket::orderBy('created_at', 'DESC')->with('autor','comentarios','votos')->paginate(20);
+        $tickets = self::selectTicketsList()
+        ->orderBy('created_at', 'DESC')
+        ->where('estado', 'abierto')
+        ->paginate(5);
 
         return view('tickets/lista', compact('tickets'));
     }
@@ -30,7 +48,11 @@ class TicketsController extends Controller {
 
     public function pendientes()
     {
-        $tickets = Ticket::orderBy('created_at', 'DESC')->paginate();
+
+        $tickets = self::selectTicketsList()
+        ->orderBy('created_at', 'DESC')
+        ->where('estado', 'abierto')
+        ->paginate(20);
 
         return view('tickets/lista', compact('tickets'));
     }
@@ -38,7 +60,10 @@ class TicketsController extends Controller {
 
     public function cerrados()
     {
-        $tickets = Ticket::orderBy('created_at', 'DESC')->paginate();
+        $tickets = self::selectTicketsList()
+        ->orderBy('created_at', 'DESC')
+        ->where('estado', 'cerrado')
+        ->paginate(20);
 
         return view('tickets/lista', compact('tickets'));
     }
