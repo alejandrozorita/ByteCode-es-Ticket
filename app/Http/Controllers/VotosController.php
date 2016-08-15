@@ -2,6 +2,8 @@
 
 use SistemaTickets\Http\Requests;
 use SistemaTickets\Http\Controllers\Controller;
+use SistemaTickets\Entities\Ticket;
+use Illuminate\Auth\Guard;
 
 use Illuminate\Http\Request;
 
@@ -22,9 +24,14 @@ class VotosController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function guardar($id)
+	public function guardar($id, Guard $auth)
 	{
-		dd($id);
+
+		$ticket = Ticket::findOrFail($id);
+
+		$voto = $auth->user()->votar($ticket);
+		
+		return redirect()->back();
 	}
 
 	/**
@@ -76,9 +83,14 @@ class VotosController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function borrar($id)
+	public function borrar($id, Guard $auth)
 	{
-		dd($id);
+		$ticket = Ticket::findOrFail($id);
+
+		$auth->user()->quitarVoto($ticket);
+
+		return redirect()->back();
+
 	}
 
 }

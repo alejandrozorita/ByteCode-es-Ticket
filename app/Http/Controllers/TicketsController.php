@@ -44,11 +44,13 @@ class TicketsController extends Controller {
     }
 
 
-    public function detalle($id)
+    public function detalle($id, Guard $auth)
     {
         $ticket = Ticket::findOrFail($id);
+
+        $user = $auth->user();
         
-        return view('tickets/detalle', compact('ticket'));
+        return view('tickets/detalle', compact('ticket','user'));
     }
 
 
