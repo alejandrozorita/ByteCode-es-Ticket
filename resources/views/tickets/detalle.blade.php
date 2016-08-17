@@ -31,23 +31,27 @@
             
             </p>
 
-            @if ( ! $user->hasVoted($ticket))
-                {!! Form::open(['route' => ['voto.guardar', $ticket->id], 'method' => 'POST']) !!}
-
-                 <!--button type="submit" class="btn btn-primary">Votar</button-->
-                <button type="submit" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-thumbs-up"></span> Votar</button>
-
-            {!! Form::close() !!}
-            @else
-
-                {!! Form::open(['route' => ['voto.borrar', $ticket->id] , 'method' => 'DELETE']) !!}
+            @if (Auth::check())
+            
+                @if ( ! $user->hasVoted($ticket))
+                    {!! Form::open(['route' => ['voto.guardar', $ticket->id], 'method' => 'POST']) !!}
 
                      <!--button type="submit" class="btn btn-primary">Votar</button-->
-                    <button type="submit" class="btn btn-danger">
-                        <span class="glyphicon glyphicon-thumbs-up"></span> Quitar voto</button>
+                    <button type="submit" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-thumbs-up"></span> Votar</button>
 
                 {!! Form::close() !!}
+                @else
+
+                    {!! Form::open(['route' => ['voto.borrar', $ticket->id] , 'method' => 'DELETE']) !!}
+
+                         <!--button type="submit" class="btn btn-primary">Votar</button-->
+                        <button type="submit" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-thumbs-up"></span> Quitar voto</button>
+
+                    {!! Form::close() !!}
+
+                @endif
 
             @endif
             

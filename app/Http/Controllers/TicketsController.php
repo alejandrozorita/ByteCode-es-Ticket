@@ -5,35 +5,28 @@ use SistemaTickets\Http\Requests;
 use SistemaTickets\Entities\Ticket;
 use SistemaTickets\Http\Controllers\Controller;
 
+use SistemaTickets\Repositorios\TicketRepo;
 
 use Illuminate\Auth\Guard;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 
+
+
 class TicketsController extends Controller {
 
+    private $ticketRepo;
 
-    protected function selectTicketsList()
+    public function __construct(TicketRepo $ticketRepo)
     {
-        return Ticket::selectRaw(
-
-            'tickets.*, '
-            . '( SELECT COUNT(*) FROM ticket_comentarios WHERE ticket_comentarios.ticket_id = tickets.id ) as num_comentarios,'
-            . '( SELECT COUNT(*) FROM ticket_votos WHERE ticket_votos.ticket_id = tickets.id ) as num_votos'
-
-        )
-
-        //->orderBy('created_at', 'DESC')->with('autor','comentarios','votos ')->paginate(20);
-        ->with('autor');
+        $this->ticketRepo = $ticketRepo;
     }
+    
  
 	public function ultimos()
     {
 
-        $tickets = self::selectTicketsList()
-        ->orderBy('created_at', 'DESC')
-        ->where('estado', 'abierto')
-        ->paginate(5);
+        $tickets = $this->ticketRepo->paginarUltimos();
 
         return view('tickets/lista', compact('tickets'));
     }
@@ -41,7 +34,7 @@ class TicketsController extends Controller {
 
     public function populares()
     {
-        $tickets = Ticket::orderBy('created_at', 'DESC')->paginate();
+        $tickets = $this->ticketRepo->populares();
 
         return view('tickets/lista', compact('tickets'));
     }
@@ -49,10 +42,8 @@ class TicketsController extends Controller {
     public function pendientes()
     {
 
-        $tickets = self::selectTicketsList()
-        ->orderBy('created_at', 'DESC')
-        ->where('estado', 'abierto')
-        ->paginate(20);
+        $tickets = $this->ticketRepo->pendientes();
+
 
         return view('tickets/lista', compact('tickets'));
     }
@@ -60,10 +51,7 @@ class TicketsController extends Controller {
 
     public function cerrados()
     {
-        $tickets = self::selectTicketsList()
-        ->orderBy('created_at', 'DESC')
-        ->where('estado', 'cerrado')
-        ->paginate(20);
+        $tickets = $this->ticketRepo->cerrados();
 
         return view('tickets/lista', compact('tickets'));
     }
@@ -71,7 +59,7 @@ class TicketsController extends Controller {
 
     public function detalle($id, Guard $auth)
     {
-        $ticket = Ticket::findOrFail($id);
+        $ticket = $this->ticketRepo->findOrFail($id);
 
         $user = $auth->user();
         
