@@ -4,8 +4,13 @@ namespace SistemaTickets\Repositorios;
 
 use SistemaTickets\Entities\Ticket;
 
-class TicketRepo {
+class TicketRepo extends BaseRepo{
+	
 
+	public function getModel()
+	{
+		return new Ticket();
+	}
 
 	protected function selectTicketsList()
     {
@@ -52,12 +57,6 @@ class TicketRepo {
         ->orderBy('created_at', 'DESC')
         ->where('estado', 'cerrado')
         ->paginate(20);
-	}
-
-
-	public function findOrFail($id)
-	{
-		return Ticket::findOrFail($id);
 	}
 
 }
