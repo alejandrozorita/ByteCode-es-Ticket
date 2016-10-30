@@ -14,7 +14,7 @@ class TicketRepo extends BaseRepo{
 
 	protected function selectTicketsList()
     {
-        return Ticket::selectRaw(
+        return $this->newQuery()->selectRaw(
 
             'tickets.*, '
             . '( SELECT COUNT(*) FROM ticket_comentarios WHERE ticket_comentarios.ticket_id = tickets.id ) as num_comentarios,'
